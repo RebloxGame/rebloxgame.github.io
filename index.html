@@ -29,5 +29,16 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
+    <script>
+
+document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState == "hidden") {
+        SendMessage("Receiver", "DoSomething");
+    } else {
+        SendMessage("Receiver", "DoSomethingElse");
+    }
+});
+
+</script>
   </body>
 </html>
